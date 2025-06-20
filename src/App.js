@@ -18,7 +18,7 @@ function App() {
           type="text"
           placeholder="Name"
           value={name}
-          onChange={(e)=> setName(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
         />
         <input
           type="email"
