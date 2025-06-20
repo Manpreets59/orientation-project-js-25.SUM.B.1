@@ -27,3 +27,7 @@ button {
   border-radius: 4px;
   background-color: rgb(248 185 42);
 }
+
+.userInfoDisplay {
+  color: black;
+}
