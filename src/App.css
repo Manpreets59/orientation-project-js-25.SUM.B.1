@@ -31,3 +31,10 @@ button {
 .userInfoDisplay {
   color: black;
 }
+
+.userInfoSection {
+  margin-bottom: 48px; /* Adds space below the form */
+  width: 80%; /* Make the edit box even wider */
+  margin-left: 10%; /* Center the wider box */
+  margin-right: 10%; /* Center the wider box */
+}
