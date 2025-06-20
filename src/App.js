@@ -12,19 +12,25 @@ function App() {
       <h1>Resume Builder</h1>
       {/* User Information Section */}
       <div className="userInfoSection">
+        <label htmlFor="nameInput">Name</label>
         <input
+          id="nameInput"
           type="text"
           placeholder="Name"
           value={name}
           onChange={e => setName(e.target.value)}
         />
+        <label htmlFor="emailInput">Email</label>
         <input
+          id="emailInput"
           type="email"
           placeholder="Email"
           value={email}
           onChange={e => setEmail(e.target.value)}
         />
+        <label htmlFor="phoneInput">Phone</label>
         <input
+          id="phoneInput"
           type="tel"
           placeholder="Phone"
           value={phone}
