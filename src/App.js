@@ -6,45 +6,55 @@ function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [linkedin, setLinkedin] = useState("");
+  const [github, setGithub] = useState("");
 
   return (
     <div className="App">
       <h1>Resume Builder</h1>
       {/* User Information Section */}
       <div className="userInfoSection">
-        <label htmlFor="nameInput">Name</label>
         <input
-          id="nameInput"
           type="text"
           placeholder="Name"
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e)=> setName(e.target.value)}
         />
-        <label htmlFor="emailInput">Email</label>
         <input
-          id="emailInput"
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <label htmlFor="phoneInput">Phone</label>
         <input
-          id="phoneInput"
           type="tel"
           placeholder="Phone"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="LinkedIn URL"
+          value={linkedin}
+          onChange={(e) => setLinkedin(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="GitHub URL"
+          value={github}
+          onChange={(e) => setGithub(e.target.value)}
         />
       </div>
       {/* Display user info in resumeSection */}
       <div className="resumeSection">
         <div className="userInfoDisplay">
           <h2>{name}</h2>
-          {(email || phone) && (
+          {(email || phone || linkedin || github) && (
             <p>
-              {email && <span>Email: {email}</span>}
-              {phone && <span> | Phone: {phone}</span>}
+              {email && <span>{email}</span>}
+              {phone && <span> | {phone}</span>}
+              {linkedin && <span> | {linkedin}</span>}
+              {github && <span> | {github}</span>}
             </p>
           )}
         </div>
