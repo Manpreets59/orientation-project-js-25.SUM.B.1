@@ -18,7 +18,7 @@ function App() {
           type="text"
           placeholder="Name"
           value={name}
-          onChange={e => setName(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
         />
         <label htmlFor="emailInput">Email</label>
         <input
@@ -26,7 +26,7 @@ function App() {
           type="email"
           placeholder="Email"
           value={email}
-          onChange={e => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <label htmlFor="phoneInput">Phone</label>
         <input
@@ -34,7 +34,7 @@ function App() {
           type="tel"
           placeholder="Phone"
           value={phone}
-          onChange={e => setPhone(e.target.value)}
+          onChange={(e) => setPhone(e.target.value)}
         />
       </div>
       {/* Display user info in resumeSection */}
