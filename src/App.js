@@ -35,10 +35,12 @@ function App() {
       <div className="resumeSection">
         <div className="userInfoDisplay">
           <h2>{name}</h2>
-          <p>
-            {email && <span>{email}</span>}
-            {email && phone && <span> | </span>}
-          </p>
+          {(email || phone) && (
+            <p>
+              {email && <span>Email: {email}</span>}
+              {phone && <span> | Phone: {phone}</span>}
+            </p>
+          )}
         </div>
       </div>
       <div className="resumeSection">
@@ -64,8 +66,5 @@ function App() {
     </div>
   );
 }
-
-export default App;
-
 
 export default App;
