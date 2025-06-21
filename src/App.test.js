@@ -1,7 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import App from "./App";
 
-
 test("renders Resume Builder heading", () => {
   render(<App />);
   const headingElement = screen.getByText(/Resume Builder/i);
@@ -19,11 +18,21 @@ test("renders user info input fields", () => {
 
 test("displays user info in resume section after input", () => {
   render(<App />);
-  fireEvent.change(screen.getByPlaceholderText(/Name/i), { target: { value: "John Doe" } });
-  fireEvent.change(screen.getByPlaceholderText(/Email/i), { target: { value: "john@example.com" } });
-  fireEvent.change(screen.getByPlaceholderText(/Phone/i), { target: { value: "123-456-7890" } });
-  fireEvent.change(screen.getByPlaceholderText(/LinkedIn URL/i), { target: { value: "linkedin.com/in/johndoe" } });
-  fireEvent.change(screen.getByPlaceholderText(/GitHub URL/i), { target: { value: "github.com/johndoe" } });
+  fireEvent.change(screen.getByPlaceholderText(/Name/i), {
+    target: { value: "John Doe" },
+  });
+  fireEvent.change(screen.getByPlaceholderText(/Email/i), {
+    target: { value: "john@example.com" },
+  });
+  fireEvent.change(screen.getByPlaceholderText(/Phone/i), {
+    target: { value: "123-456-7890" },
+  });
+  fireEvent.change(screen.getByPlaceholderText(/LinkedIn URL/i), {
+    target: { value: "linkedin.com/in/johndoe" },
+  });
+  fireEvent.change(screen.getByPlaceholderText(/GitHub URL/i), {
+    target: { value: "github.com/johndoe" },
+  });
 
   expect(screen.getByText(/John Doe/i)).toBeInTheDocument();
   expect(screen.getByText(/john@example.com/i)).toBeInTheDocument();
