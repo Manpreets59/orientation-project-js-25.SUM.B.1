@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import LogoDropzone from "./LogoDropzone"; // ✅ Import the dropzone component
 
 function App() {
   // Add state for user information
@@ -12,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <h1>Resume Builder</h1>
-      {/* User Information Section */}
+
       <div className="userInfoSection">
         <input
           type="text"
@@ -45,7 +46,12 @@ function App() {
           onChange={(e) => setGithub(e.target.value)}
         />
       </div>
-      {/* Display user info in resumeSection */}
+
+      <div className="resumeSection">
+        <h2>Upload Logo</h2>
+        <LogoDropzone />
+      </div>
+
       <div className="resumeSection">
         <div className="userInfoDisplay">
           <h2>{name}</h2>
@@ -59,24 +65,28 @@ function App() {
           )}
         </div>
       </div>
+
       <div className="resumeSection">
         <h2>Experience</h2>
         <p>Experience Placeholder</p>
         <button>Add Experience</button>
         <br />
       </div>
+
       <div className="resumeSection">
         <h2>Education</h2>
         <p>Education Placeholder</p>
         <button>Add Education</button>
         <br />
       </div>
+
       <div className="resumeSection">
         <h2>Skills</h2>
         <p>Skill Placeholder</p>
         <button>Add Skill</button>
         <br />
       </div>
+
       <br />
       <button>Export</button>
     </div>
