@@ -25,7 +25,7 @@ test("displays user info in resume section after input", () => {
     target: { value: "john@example.com" },
   });
   fireEvent.change(screen.getByPlaceholderText(/Phone/i), {
-    target: { value: "123-456-7890" },
+    target: { value: "1234567890" },
   });
   fireEvent.change(screen.getByPlaceholderText(/LinkedIn URL/i), {
     target: { value: "linkedin.com/in/johndoe" },
@@ -36,7 +36,7 @@ test("displays user info in resume section after input", () => {
 
   expect(screen.getByText(/John Doe/i)).toBeInTheDocument();
   expect(screen.getByText(/john@example.com/i)).toBeInTheDocument();
-  expect(screen.getByText(/123-456-7890/i)).toBeInTheDocument();
+  expect(screen.getByText(/1234567890/i)).toBeInTheDocument();
   expect(screen.getByText(/linkedin.com\/in\/johndoe/i)).toBeInTheDocument();
   expect(screen.getByText(/github.com\/johndoe/i)).toBeInTheDocument();
 });
