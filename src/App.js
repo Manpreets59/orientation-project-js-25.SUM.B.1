@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
+import { Link } from "react-router-dom";
 import LogoDropzone from "./LogoDropzone"; // ✅ Import the dropzone component
 
-function App() {
+function App({ userId, setUserId }) {
   // Add state for user information
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -86,7 +87,7 @@ function App() {
       <div className="resumeSection">
         <h2>Experience</h2>
         <p>Experience Placeholder</p>
-        <button>Add Experience</button>
+        <button>Add experience</button>
         <br />
       </div>
 
@@ -100,7 +101,10 @@ function App() {
       <div className="resumeSection">
         <h2>Skills</h2>
         <p>Skill Placeholder</p>
-        <button>Add Skill</button>
+        <Link to="/addSkill">
+          {" "}
+          <button>Add skill</button>
+        </Link>
         <br />
       </div>
 
