@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.css";
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";

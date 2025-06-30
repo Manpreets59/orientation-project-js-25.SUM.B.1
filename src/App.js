@@ -1,9 +1,31 @@
 import React, { useState } from "react";
 import "./App.css";
+import Form from "./Form";
+import SkillForm from "./SkillForm";
+import ExperienceForm from "./ExperienceForm";
 import { Link } from "react-router-dom";
 import LogoDropzone from "./LogoDropzone"; // ✅ Import the dropzone component
 
-function App({ userId, setUserId }) {
+function App() {
+  const [editMode, setEditMode] = useState(false);
+  const [skillEditMode, setSkillEditMode] = useState(false);
+  const [experienceEditMode, setExperienceEditMode] = useState(false);
+
+  function editEduHandler(e) {
+    e.preventDefault();
+    setEditMode(true);
+  }
+
+  function editSkillHandler(e) {
+    e.preventDefault();
+    setSkillEditMode(true);
+  }
+
+  function editExpHandler(e) {
+    e.preventDefault();
+    setExperienceEditMode(true);
+  }
+
   // Add state for user information
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -86,26 +108,57 @@ function App({ userId, setUserId }) {
 
       <div className="resumeSection">
         <h2>Experience</h2>
-        <p>Experience Placeholder</p>
-        <button>Add experience</button>
-        <br />
+        {experienceEditMode ? (
+          <ExperienceForm />
+        ) : (
+          <div>
+            <p>Experience Placeholder</p>
+            <button className="mx-2" onClick={editExpHandler}>
+              Add Experience
+            </button>
+            <button className="mx-2" onClick={editExpHandler}>
+              Edit Experience
+            </button>
+          </div>
+        )}
+        <br></br>
       </div>
 
       <div className="resumeSection">
         <h2>Education</h2>
-        <p>Education Placeholder</p>
-        <button>Add Education</button>
-        <br />
+        {editMode ? (
+          <Form />
+        ) : (
+          <div>
+            <p>Education Placeholder</p>
+            <button className="mx-2" onClick={editEduHandler}>
+              Add Education
+            </button>
+            <button className="mx-2" onClick={editEduHandler}>
+              Edit Education
+            </button>
+          </div>
+        )}
+
+        <br></br>
       </div>
 
       <div className="resumeSection">
         <h2>Skills</h2>
-        <p>Skill Placeholder</p>
-        <Link to="/addSkill">
-          {" "}
-          <button>Add skill</button>
-        </Link>
-        <br />
+        {skillEditMode ? (
+          <SkillForm />
+        ) : (
+          <div>
+            <p>Skill Placeholder</p>
+            <Link className="mx-2" to="/addSkill">
+              {" "}
+              <button>Add skill</button>
+            </Link>
+            <button className="mx-2" onClick={editSkillHandler}>
+              Edit Skill
+            </button>
+          </div>
+        )}
       </div>
 
       <br />
