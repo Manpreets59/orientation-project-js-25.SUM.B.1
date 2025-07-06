@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import "./App.css";
-import Form from "./Form";
-import SkillForm from "./SkillForm";
-import ExperienceForm from "./ExperienceForm";
 import { Link } from "react-router-dom";
 import AddExperience from "./AddExperience";
 import LogoDropzone from "./LogoDropzone";
@@ -10,30 +7,13 @@ import ExperiencesList from "./ExperiencesList";
 import SkillsList from "./SkillsList";
 
 function App({ userId, setUserId }) {
-  const [editMode, setEditMode] = useState(false);
-  const [skillEditMode, setSkillEditMode] = useState(false);
-  const [experienceEditMode, setExperienceEditMode] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [linkedin, setLinkedin] = useState("");
   const [github, setGithub] = useState("");
   const [showExperienceForm, setShowExperienceForm] = useState(false);
-
-  function editEduHandler(e) {
-    e.preventDefault();
-    setEditMode(true);
-  }
-
-  function editSkillHandler(e) {
-    e.preventDefault();
-    setSkillEditMode(true);
-  }
-
-  function editExpHandler(e) {
-    e.preventDefault();
-    setExperienceEditMode(true);
-  }
+  const [refreshKey, setRefreshKey] = useState(0);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -109,9 +89,14 @@ function App({ userId, setUserId }) {
 
       <div className="resumeSection">
         <h2>Experience</h2>
-        <ExperiencesList />
+        <ExperiencesList key={`experiences-${refreshKey}`} />
         {showExperienceForm ? (
-          <AddExperience onCancel={() => setShowExperienceForm(false)} />
+          <AddExperience 
+            onCancel={() => {
+              setShowExperienceForm(false);
+              setRefreshKey(prev => prev + 1);
+            }} 
+          />
         ) : (
           <button onClick={() => setShowExperienceForm(true)}>
             Add Experience
@@ -127,7 +112,7 @@ function App({ userId, setUserId }) {
 
       <div className="resumeSection">
         <h2>Skills</h2>
-        <SkillsList />
+        <SkillsList key={`skills-${refreshKey}`} />
         <Link to="/addSkill">
           <button>Add skill</button>
         </Link>
