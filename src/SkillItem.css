@@ -1,0 +1,152 @@
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  margin: 8px 0;
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  cursor: default;
+}
+
+.skill-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.skill-item.dragging {
+  transform: rotate(3deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.skill-drag-handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 32px;
+  cursor: grab;
+  color: #6c757d;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.skill-drag-handle:hover {
+  background-color: #f8f9fa;
+  color: #495057;
+}
+
+.skill-drag-handle:active {
+  cursor: grabbing;
+}
+
+.drag-icon {
+  font-size: 18px;
+  line-height: 1;
+  user-select: none;
+}
+
+.skill-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.skill-header {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.skill-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: #212529;
+}
+
+.skill-proficiency {
+  font-size: 14px;
+  color: #6c757d;
+  background-color: #f8f9fa;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 500;
+  border: 1px solid #e9ecef;
+}
+
+.skill-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #e9ecef;
+  flex-shrink: 0;
+}
+
+.skill-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #ffffff;
+}
+
+.skill-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  opacity: 0.6;
+}
+
+.delete-button:hover {
+  background-color: #f8f9fa;
+  opacity: 1;
+}
+
+.delete-button:active {
+  background-color: #e9ecef;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .skill-item {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+  
+  .skill-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .skill-name {
+    font-size: 14px;
+  }
+  
+  .skill-proficiency {
+    font-size: 12px;
+  }
+  
+  .skill-logo {
+    width: 28px;
+    height: 28px;
+  }
+}

@@ -1,0 +1,153 @@
+.experience-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  margin: 10px 0;
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  cursor: default;
+}
+
+.experience-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.experience-item.dragging {
+  transform: rotate(5deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.experience-drag-handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 40px;
+  cursor: grab;
+  color: #6c757d;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.experience-drag-handle:hover {
+  background-color: #f8f9fa;
+  color: #495057;
+}
+
+.experience-drag-handle:active {
+  cursor: grabbing;
+}
+
+.drag-icon {
+  font-size: 18px;
+  line-height: 1;
+  user-select: none;
+}
+
+.experience-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.experience-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.experience-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: #212529;
+}
+
+.experience-company {
+  font-size: 16px;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.experience-dates {
+  font-size: 14px;
+  color: #868e96;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+.experience-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #495057;
+  margin: 0 0 12px 0;
+}
+
+.experience-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #e9ecef;
+}
+
+.experience-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #ffffff;
+}
+
+.experience-actions {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  opacity: 0.6;
+}
+
+.delete-button:hover {
+  background-color: #f8f9fa;
+  opacity: 1;
+}
+
+.delete-button:active {
+  background-color: #e9ecef;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .experience-item {
+    padding: 12px;
+    gap: 8px;
+  }
+  
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .experience-title {
+    font-size: 16px;
+  }
+  
+  .experience-company {
+    font-size: 14px;
+  }
+}
