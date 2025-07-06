@@ -1,0 +1,52 @@
+.skills-list {
+  margin: 20px 0;
+  min-height: 50px;
+}
+
+.skills-loading,
+.skills-error,
+.skills-empty {
+  padding: 20px;
+  text-align: center;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  color: #6c757d;
+  margin: 10px 0;
+}
+
+.skills-error {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+.skills-error button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.skills-error button:hover {
+  background-color: #c82333;
+}
+
+.skills-empty {
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+  color: #0c5460;
+}
+
+/* Drag and drop feedback */
+.skills-list .dnd-sortable-ghost {
+  opacity: 0.4;
+}
+
+.skills-list .dnd-sortable-chosen {
+  cursor: grabbing;
+}

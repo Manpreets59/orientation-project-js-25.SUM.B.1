@@ -6,6 +6,8 @@ import ExperienceForm from "./ExperienceForm";
 import { Link } from "react-router-dom";
 import AddExperience from "./AddExperience";
 import LogoDropzone from "./LogoDropzone";
+import ExperiencesList from "./ExperiencesList";
+import SkillsList from "./SkillsList";
 
 function App({ userId, setUserId }) {
   const [editMode, setEditMode] = useState(false);
@@ -107,7 +109,7 @@ function App({ userId, setUserId }) {
 
       <div className="resumeSection">
         <h2>Experience</h2>
-        <p>Experience Placeholder</p>
+        <ExperiencesList />
         {showExperienceForm ? (
           <AddExperience onCancel={() => setShowExperienceForm(false)} />
         ) : (
@@ -125,7 +127,7 @@ function App({ userId, setUserId }) {
 
       <div className="resumeSection">
         <h2>Skills</h2>
-        <p>Skill Placeholder</p>
+        <SkillsList />
         <Link to="/addSkill">
           <button>Add skill</button>
         </Link>
